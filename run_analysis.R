@@ -41,5 +41,6 @@ tidy_dat <- tidy_dat[-67]
 final_dat <- aggregate(.~ activity_label + subject, data = tidy_dat, FUN = mean)
 
 #write and read
+write.table(tidy_dat, file = "tidy_dat.txt", row.names = F)
 write.table(final_dat, file = "final_dat.txt", row.names = F)
 my_dat <- read.table("final_dat.txt", header = T)
